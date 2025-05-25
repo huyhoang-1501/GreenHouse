@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenhouse</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="image/greenhouse.png" type="image/png">
+</head>
+<body>
+  <div id="menu-toggle">☰</div>
+
+  <div id="sidebar">
+    <ul>
+      <li><a href="#" onclick="showSection('home')">HOME</a></li>
+      <li><a href="#" onclick="showSection('bieudo')">CHART</a></li>
+    </ul>
+  </div>
+
+  <header id="header">
+    <div class="header-content">
+      <h1>GREENHOUSE</h1>
+      <div class="logo-section">
+        <img src="image/spkt.png" alt="Logo" id="logo" />
+        <span>HCMUTE</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="banner">
+    <div class="tag">
+      <button onclick="selectRoom('vuon1')">Garden 1</button>
+      <button onclick="selectRoom('vuon2')">Garden 2</button>
+      <button onclick="selectRoom('vuon3')">Garden 3</button>
+      <button onclick="selectRoom('vuon4')">Garden 4</button>
+    </div>
+  </section>
+
+  <main id="main">
+    <div id="top">
+      <div id="time"></div>
+      <div class="weather-container">
+        <div class="weather-box">
+          <img src="image/temperature.png" alt="Temperature" class="weather-icon" />
+          <h2>Temperature</h2>
+          <p id="nhietdo">-- °C</p>
+        </div>
+        <div class="weather-box">
+          <img src="image/humidity.png" alt="Humidity" class="weather-icon" />
+          <h2>Humidity</h2>
+          <p id="doam">-- %</p>
+        </div>
+        <div class="weather-box">
+          <img src="image/co2.png" alt="C02 Gas" class="weather-icon" />
+          <h2>C02 Gas</h2>
+          <p id="khico2">-- ppm</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="bot">
+      <h2>Control Devices</h2>
+      <div class="control-container">
+        <div class="control-box">
+          <img src="image/dentat.png" alt="LIGHT" class="control-icon" id="imgDen" />
+          <div class="btn-group">
+            <button id="btnDenOn">On</button>
+            <button id="btnDenOff">Off</button>
+          </div>
+          <p>LIGHT</p>
+        </div>
+        <div class="control-box">
+          <img src="image/quattat.png" alt="FAN" class="control-icon" id="imgQuat" />
+          <div class="btn-group">
+            <button id="btnQuatOn">On</button>
+            <button id="btnQuatOff">Off</button>
+          </div>
+          <p>FAN</p>
+        </div>
+        <div class="control-box">
+          <img src="image/mayphuntat.png" alt="WATER SPRINKLER" class="control-icon" id="imgMayPhun" />
+          <div class="btn-group">
+            <button id="btnMayPhunOn">On</button>
+            <button id="btnMayPhunOff">Off</button>
+          </div>
+          <p>WATER SPRINKLER</p>
+        </div>        
+      </div>
+    </div>
+
+    <!-- Thêm phần Nhật ký hoạt động -->
+    <div class="activity-log">
+      <h2>NHẬT KÝ HOẠT ĐỘNG</h2>
+      <ul id="log-list" class="log-list"></ul>
+    </div>
+  </main>
+
+  <div id="dynamicContent" style="display: none; text-align: center; padding: 3rem;">
+    <h1 id="dynamicTitle"></h1>
+    <div id="bieudo-content" style="display: none; text-align: center; padding: 3rem;">
+      <h1>Biểu đồ Nhiệt độ, Độ ẩm và Khí CO2</h1>
+      <div class="chart-container">
+        <canvas id="humidityChart" width="800" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <ul>
+      <li>Nguyễn Phạm Huy Hoàng_22161125</li>
+      <li>Nguyễn Tấn Đạt_22161110</li>
+      <li>Trần Thiện Hiệu_22161122</li>
+    </ul>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+  <script src="function.js"></script>
+</body>
+</html>
