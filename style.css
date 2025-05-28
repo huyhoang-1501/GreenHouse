@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  filter: none; /* Đảm bảo không có hiệu ứng làm mờ ảnh hưởng đến background */
+  filter: none;
 }
 
 .container {
@@ -31,12 +31,16 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -65,7 +69,6 @@ body {
   letter-spacing: 1.5px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin: 0;
-  margin-left: 1.5rem;
   flex: 0 0 auto;
 }
 
@@ -73,7 +76,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-left: auto;
 }
 
 #logo {
@@ -282,7 +284,6 @@ body {
   margin-top: 0.4rem;
 }
 
-/* Activity Log Styles */
 .activity-log {
   margin-top: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
@@ -363,7 +364,7 @@ body {
 
 #footer ul li {
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255,  personally255, 0.2);
   padding: 0.4rem 1.2rem;
   border-radius: 15px;
   transition: all 0.3s ease;
